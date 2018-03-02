@@ -123,16 +123,17 @@ exports.testCmd = (rl,id) => {
 	} else {
 		try{
 			const quiz = model.getByIndex(id);
-			log(`${colorize(quiz.question, 'red')}${colorize('?', 'red')}`);
-				rl.question(colorize('Introduzca la respuesta: ', 'red'), answer => {
-					if (answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
-						biglog('CORRECTO', 'green');
-						rl.prompt();
-					} else {
-						biglog('INCORRECTO', 'red');
-						rl.prompt();
-					}
-				});
+			rl.question(colorize(quiz.question + '? ', 'red' ), answer => {
+				if (answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
+					log(`Su respuesta es: `);
+					biglog('CORRECTA', 'green');
+					rl.prompt();
+				} else {
+					log(`Su respuesta es: `);
+					biglog('INCORRECTA', 'red');
+					rl.prompt();
+				}
+			});
 		} catch (error){
 			errorlog(error.message);
 			rl.prompt();
