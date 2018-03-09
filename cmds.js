@@ -269,7 +269,8 @@ exports.playCmd = rl => {
 						.then(answer => {
 							if (answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
 								score++;
-								log("CORRECTO - Lleva " + score + " aciertos");
+								log("CORRECTO");
+								log("Lleva " + score + " aciertos");
 								toBeResolved.splice(id, 1);
 								playOne();
 							} else {
