@@ -219,7 +219,7 @@ exports.testCmd = (rl,id) => {
 				rl.prompt();
 			} else {
 				log(`Su respuesta es: `);
-				biglog('INCORRECTA', 'red');
+				log('INCORRECTA', 'red');
 				rl.prompt();
 			}
 		});
