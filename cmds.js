@@ -256,7 +256,7 @@ exports.playCmd = rl => {
 
 			const playOne = () => {
 				if (toBeResolved.length === 0){
-					biglog('Fin');
+					log('Fin');
 					log('Aciertos: ');
 					biglog(score, 'magenta');
 					rl.prompt();
@@ -271,11 +271,10 @@ exports.playCmd = rl => {
 								score++;
 								log("CORRECTO");
 								log("Lleva " + score + " aciertos");
-								
 								playOne();
 							} else {
 								log(`INCORRECTO.`);
-								biglog('Fin');
+								log('Fin');
 								log('Aciertos: ');
 								biglog(score, 'magenta');
 								rl.prompt();
@@ -283,7 +282,7 @@ exports.playCmd = rl => {
 						}); 
 					} catch (error){
 						errorlog(error.message);
-							rl.prompt();
+						rl.prompt();
 					}  
 				}
 			};
