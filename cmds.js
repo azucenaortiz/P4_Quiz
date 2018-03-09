@@ -256,7 +256,8 @@ exports.playCmd = rl => {
 
 			const playOne = () => {
 				if (toBeResolved.length === 0){
-					log('Fin del examen. Aciertos: ');
+					log('Fin');
+					log('Aciertos: ');
 					biglog(score, 'magenta');
 					rl.prompt();
 				} else {
@@ -273,7 +274,8 @@ exports.playCmd = rl => {
 								playOne();
 							} else {
 								log(`INCORRECTO.`);
-								log('Fin del examen. Aciertos: ');
+								log('Fin');
+								log('Aciertos: ');
 								biglog(score, 'magenta');
 								rl.prompt();
 							}
