@@ -269,11 +269,11 @@ exports.playCmd = rl => {
 						.then(answer => {
 							if (answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
 								score++;
-								log("CORRECTO");
+								log("CORRECTA");
 								log("Lleva " + score + " aciertos");
 								playOne();
 							} else {
-								log(`INCORRECTO.`);
+								log(`INCORRECTA.`);
 								log('Fin');
 								log('Aciertos: ');
 								biglog(score, 'magenta');
