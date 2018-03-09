@@ -219,7 +219,7 @@ exports.testCmd = (rl,id) => {
 				rl.prompt();
 			} else {
 				log(`Su respuesta es: `);
-				log('INCORRECTA', 'red');
+				biglog('INCORRECTA', 'red');
 				rl.prompt();
 			}
 		});
@@ -256,7 +256,7 @@ exports.playCmd = rl => {
 
 			const playOne = () => {
 				if (toBeResolved.length === 0){
-					log('Fin');
+					biglog('Fin');
 					log('Aciertos: ');
 					biglog(score, 'magenta');
 					rl.prompt();
@@ -275,7 +275,7 @@ exports.playCmd = rl => {
 								playOne();
 							} else {
 								log(`INCORRECTO.`);
-								log('Fin');
+								biglog('Fin');
 								log('Aciertos: ');
 								biglog(score, 'magenta');
 								rl.prompt();
