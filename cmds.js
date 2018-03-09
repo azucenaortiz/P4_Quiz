@@ -264,14 +264,14 @@ exports.playCmd = rl => {
 					try{
 						let id = parseInt(Math.random()*toBeResolved.length);
 						const quiz = encuesta[toBeResolved[id]];
-						
+						toBeResolved.splice(id, 1);
 						return makeQuestion(rl, `${quiz.question}? `)
 						.then(answer => {
 							if (answer.toLowerCase().trim() === quiz.answer.toLowerCase().trim()){
 								score++;
 								log("CORRECTO");
 								log("Lleva " + score + " aciertos");
-								toBeResolved.splice(id, 1);
+								
 								playOne();
 							} else {
 								log(`INCORRECTO.`);
